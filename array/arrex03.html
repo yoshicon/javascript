@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>성적 평가</title>
+</head>
+<body bgcolor="#666666">
+
+    <p id="name"></p>
+    <p id="score"></p>
+    <p id="weight"></p>
+
+    <script>
+        var name = prompt('느그 이름 특');
+        document.getElementById("name").innerHTML = name;
+        console.log(typeof name);
+
+        var score = prompt('국어 점수 특')-0;   // +-0, */1
+        document.getElementById("score").innerHTML = score;
+        console.log(typeof score);
+
+        var arr = 'F F F F F C C C B A A'.split(' ');
+        var weightNum = parseInt(score / 10);
+        document.getElementById("weight").innerHTML = '점수 평가 : '+arr[weightNum];
+        console.log(typeof weight);
+    </script>
+
+</body>
+</html>

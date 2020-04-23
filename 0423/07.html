@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1#mani{
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body bgcolor="#666666">
+
+    <h1 id='mani'>ㅸ시공의 폭풍은 정말 최고야</h1>
+    <button onclick="act()">고 / 스답</button>
+
+    <script>
+
+        var swit = -1;
+        var timId;
+        function star(){
+            timId = setInterval(lota, 500);
+        };
+
+        function stopAct(){
+            clearInterval(timId);
+        }
+
+        function lota(){
+            var src = document.getElementById('mani').innerHTML;    // 전체 추출
+            var q = src.charAt(0);                                  // 앞글자 추출
+            var inu = src.substring(1) + q;                         // 앞글자 맨 뒤에 삽입
+            document.getElementById('mani').innerHTML = inu;        // 전체를 삽입
+        };
+
+        function act(){
+            if ((swit *= -1) < 0)
+                star();
+            else
+                stopAct();
+        };
+
+        // a = a + b; // a : 6 | b : 4
+        // b = a - b; // a : 6 | b : 2
+        // a = a - b; // a : 4 | b : 2
+
+        // a = a ^ b; // a : 6 (0110) | b : 4 (0100)
+        // b = a ^ b; // a : 6 (0110) | b : 2 (0010)
+        // a = a ^ b; // a : 4 (0100) | b : 2 (0010)
+
+        var q=1;
+        var w=5;
+
+        q = q^w;
+        w = q^w;
+        q = q^w;
+        console.log(q, '|' ,w);
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body bgcolor="666666">
+    <p>원본 : ["Banana", "Orange", "Apple", "Mango"]</p><hr>
+    <h3>fruits.splice(fruits.length-1, 1) 실행 후 결과 //pop()을 splice로 구현</h3>
+    <p id="demo"></p>
+    <p id="rsData"></p>
+    <button onclick="myFunction()"> 죽그면않돼~~~!~~!~!~!~!~ </button>
+
+    <script>
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+            document.getElementById("demo").innerHTML = fruits;
+            function myFunction() {
+                var execRtnVal = fruits.splice(fruits.length-1, 1); //지웠던걸 배열형태로 반환
+                document.getElementById("demo").innerHTML = fruits;
+                console.log(execRtnVal)
+
+                var tagElement = document.querySelectorAll("#rsData")[0]; 
+                tagElement.innerHTML += execRtnVal;
+
+                // var tagElement = document.querySelectorAll("#rsData")[0];
+                // tagElement.innerHTML = execRtnVal;
+            }
+    </script>
+</body>
+</html>

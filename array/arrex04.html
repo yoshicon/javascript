@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정렬하는건가</title>
+</head>
+<body bgcolor="#666666">
+
+    <p id="bef"></p>
+    <p id="aft"></p>
+    <p id="rs"></p>
+    <button onclick="sortNum()">아스키 코드로 정렬</button>
+    <button onclick="sortNumUp()">오름차순</button>
+    <button onclick="sortNumDown()">내림차순</button>
+    <hr>
+    
+    <p id="strSort">가나다라마바사아자차카타파하</p>
+    <p id="strrev"></p>
+    <button onclick="strev">문자열 순서 바꾸기</button>
+
+
+    <script>
+        arrData=[12,72,67,15,58,4,8];
+        document.querySelector('#bef').innerHTML = arrData;
+        console.log("정렬 전 : ", arrData);
+
+        function sortNum(){
+                arrData.sort().reverse();
+                document.querySelector('#aft').innerHTML = arrData;
+        };
+
+        function sortNumUp(){
+                arrData.sort(function(a, b){
+                    return a-b;
+                });
+                document.querySelector('#rs').innerHTML = arrData;
+        };
+
+        function sortNumDown(){
+                arrData.sort(function(a, b){
+                    return b-a;
+                });
+                document.querySelector('#rs').innerHTML = arrData;
+        };
+
+        function strev(){
+            var src = document.getElementById('strSort').innerHTML;
+            var strCnt = src.length;
+            var resultData ='';
+            for(let i=0; i < strCnt; i++){
+                resultData += src.charAt(strCnt-1-i);
+            }
+            document.getElementById('strrev').innerHTML = resultData;
+        };
+    </script>
+</body>
+</html>
